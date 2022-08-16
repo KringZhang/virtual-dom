@@ -1,1 +1,1 @@
-export const vNode = (sel, data, children, text, elm) => ({ sel, data, children, text, elm });
+export const vNode = (sel, data, children, text, elm) => ({ sel, data, children, text, elm, key: data.key });

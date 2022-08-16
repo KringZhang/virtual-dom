@@ -14,9 +14,25 @@ const vNode2 = h('ol', {}, h('li', {}, 'sa'))
 const vNode3 = h('span', {}, '内容')
 const vNode4 = h('span', {}, 'dhajdhajk')
 const vNode5 = h('ul', {}, 'zkszks')
-const vNode6 = h('ul', {}, [h('li', {}, 'A'), h('li', {}, 'B')])
+const vNode6 = h('ul', {}, [
+    h('li', {key: 'A'}, 'A'),
+    h('li', {key: 'B'}, 'B'),
+    h('li', {key: 'C'}, 'C'),
+    // h('li', {key: 'D'}, 'D')
+])
+const vNode7 = h('ul', {}, [
+    h('li', {key: 'B'}, 'B111'),
+    h('li', {key: 'QQ'}, 'QQ'),
+    h('li', {key: 'C'}, 'C'),
+    h('li', {key: 'A'}, 'A'),
+    h('li', {key: 'D'}, 'D'),
+])
 // console.log(vNode)
 const box = document.getElementById('box')
 // patch(box, vNode1)
-patch(box, vNode5)
-patch(vNode5, vNode6)
+patch(box, vNode6)
+const btn = document.getElementById("btn")
+btn.addEventListener("click", updateDom)
+function updateDom() {
+    patch(vNode6, vNode7)
+}
